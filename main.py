@@ -1,12 +1,12 @@
 # ---------------
-# Date: 7/19/2018
-# Place: Biella/Torino
-# Author: EscVM & TArt
-# Project: OID v4
+# Date: 01/27/2021
+# Place: Beijing China
+# Author: Chris chen
+# Project: OID v6
 # ---------------
 
 """
-OID v4 Downloader
+OID v6 Downloader
 Download specific classes of the huge online dataset Open Image Dataset.
 Licensed under the MIT License (see LICENSE for details)
 ------------------------------------------------------------

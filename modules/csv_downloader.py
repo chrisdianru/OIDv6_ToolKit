@@ -43,9 +43,9 @@ def error_csv(file, csv_dir, args_y):
             prefix = str(os.path.basename(file)).split('-')[0]
             if prefix == 'oidv6': # for train
                 FILE_URL = str(OID_URL_v6 + file)
-            elseif prefix == 'validation' or prefix == 'test': # for validation and test
+            elif prefix == 'validation' or prefix == 'test': # for validation and test
                 FILE_URL = str(OID_URL_v5 + file)
-            elseif prefix == 'class': # for metadata/class names
+            elif prefix == 'class': # for metadata/class names
                 FILE_URL = str(OID_URL_v5 + file)
 
             FILE_PATH = os.path.join(csv_dir, file)

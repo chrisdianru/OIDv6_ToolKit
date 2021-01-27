@@ -6,7 +6,9 @@ import pandas as pd
 
 from modules.utils import bcolors as bc
 
-OID_URL = 'https://storage.googleapis.com/openimages/2018_04/'
+OID_URL_v4 = 'https://storage.googleapis.com/openimages/2018_04/'
+OID_URL_v5 = 'https://storage.googleapis.com/openimages/v5/'
+OID_URL_v6 = 'https://storage.googleapis.com/openimages/v6/'
 
 def TTV(csv_dir, name_file, args_y):
     '''
@@ -38,11 +40,13 @@ def error_csv(file, csv_dir, args_y):
             ans = input(bc.OKBLUE + "Do you want to download the missing file? [Y/n] " + bc.ENDC)
 
         if ans.lower() == 'y':
-            folder = str(os.path.basename(file)).split('-')[0]
-            if folder != 'class':
-                FILE_URL = str(OID_URL + folder + '/' + file)
-            else:
-                FILE_URL = str(OID_URL + file)
+            prefix = str(os.path.basename(file)).split('-')[0]
+            if prefix == 'oidv6': # for train
+                FILE_URL = str(OID_URL_v6 + file)
+            elseif prefix == 'validation' or prefix == 'test': # for validation and test
+                FILE_URL = str(OID_URL_v5 + file)
+            elseif prefix == 'class': # for metadata/class names
+                FILE_URL = str(OID_URL_v5 + file)
 
             FILE_PATH = os.path.join(csv_dir, file)
             save(FILE_URL, FILE_PATH)

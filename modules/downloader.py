@@ -132,7 +132,7 @@ def get_label(folder, dataset_dir, class_name, class_code, df_val, class_list, a
 
                     # each row in a file is name of the class_name, XMin, YMin, XMax, YMax (left top right bottom)
                     if class_name == 'Human face':
-                        print(class_name, box[0], box[2], box[1], box[3], file=f)
+                        print('Face', box[0], box[2], box[1], box[3], file=f)
                     else:
                         print('Person', box[0], box[2], box[1], box[3], file=f)
 

@@ -1,1 +1,6 @@
 Person
+Woman
+Girl
+Man
+Boy
+Human face
